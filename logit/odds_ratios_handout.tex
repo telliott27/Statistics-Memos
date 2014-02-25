@@ -1,0 +1,115 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Odds and Odds Ratios}
+%\author{The Author}
+\date{\today}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+
+
+\section{Probabilities}
+
+Odds are related to probabilities so let's refresh ourselves on probabilities. The probability gives the proportion of time something is expected to happen, when the basic process is done over and over again, independently and under the same conditions\footnote{Pg. 222 in Freedman, Pisani, and Purves}. Often, probabilities are thought of in terms of success or failure. Let N be the number of times an event is expected to happen when repeating a process over and over again. Let M be the number of times the process was repeated:
+
+\[ \text{Probability of success: } p = \frac{N}{M} \]
+
+You can find the probability of something not happening by subtracting $p$ from 1:
+
+\[ \text{Probability of failure: } q = 1-p \]
+
+Another way to think about it is: the probability of an event given a process is the total possible process outcomes that include the event (N) divided by the total possible process outcomes (M).
+
+Consider the simple case of flipping a coin. You find the probability of getting heads by dividing the number of possible ways to get heads (one) by the total possibilities (two - heads or tails). So the probability is $\frac{1}{2} = 0.5$.
+
+Consider a less simple example of drawing cards. The probability of drawing an ace from a fair 52 card deck would be the number of aces in the deck (four) divided by the total number of cards (52) so the probability is $\frac{4}{52} = 0.077$.
+
+Consider a class of 20 people. 15 of the students are female identified. 5 are male identified. What is the probability of randomly picking a female identified student if I randomly pick just one student? We divide the number of female identified students (total possible ways I can pick a female identified student) by the number of students (total possible ways I could pick any student): $\frac{15}{20} = 0.75$
+
+\section{Odds}
+
+Odds are related to probabilities, but are different. Odds are calculated by dividing the probability of success by the probability of failure. Another way to think about: let N be the number of times an event is expected to happen when repeating a process over and over again and M be the number of times you repeated the process:
+
+\[ \text{Odds: } O = \frac{N}{M-N} = \frac{p}{1-p} \]
+
+So revisiting the flipped coin, the odds of getting heads would be equal to the probability of getting heads divided by the probability of getting tails (not-heads):
+
+\[ \frac{0.5}{0.5} = 1.0 \]
+
+So if you have a fifty percent chance (or probability) of something happening, then the odds of it happening is 1. The odds of drawing an ace from a deck of cards can be calculated a couple different ways. First, we could divide the probability we calculated above by the 1 minus the probability:
+
+\[ \frac{0.077}{1-0.077} = 0.083 \]
+
+Or we can divide the number of aces in the deck by the number of not aces in the deck:
+
+\[ \frac{4}{52-4} = 0.083 \]
+
+For the classroom example, we have both possible ways to calculate the odds again. Divide the probability of picking a female identified student by the probability of not picking a female identified student. Or divide the number of female identified students by the number of not female identified students.
+
+\[ \frac{0.75}{1-0.75} = 3.0 \]
+
+\[ \frac{15}{5} = 3.0 \]
+
+Notice that if there is less than a 50\% chance of something happening, the odds will be less than one. If there is a greater than 50\% chance of something happening, the odds will be greater than one.
+
+\newpage
+
+\section{Odds Ratios}
+
+Finally, we can compare the odds of two events happening by calculating their odds ratio. Odds ratios are calculated by dividing the odds of one event by the odds of another event.
+
+Consider a large Sociology program with the following stats:
+
+\begin{table}[htb]
+\caption{Sociology Admissions\label{tab:admin}}
+\begin{tabular}{l c c}
+\hline
+& Men & Women\\ \hline
+Applied & 150 & 200\\
+Admitted & 20 & 15\\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{What is the probability of a man being admitted? A woman?}
+
+The probability of a man being admitted is the number of men admitted divided by the number that have applied:
+
+\[ p = \frac{20}{150} = 0.133 \]
+
+For women, we do the same thing:
+
+\[ p = \frac{15}{200} = 0.075 \]
+
+So men have a higher chance of getting in than women.
+
+\textbf{What is the odds of admission for men and women?}
+
+Odds are found by dividing the probability of success by the probability of failure:
+
+\[ \text{men: } O = \frac{20}{150-20} = \frac{0.133}{1-0.133} = 0.154 \]
+
+\[ \text{women: } O = \frac{15}{200-15} = \frac{0.075}{1-0.075} =  0.081 \]
+
+Again, men have higher odds of being admitted than women.
+
+\textbf{What is the odds ratio of men to women?}
+
+The odds ratio is found by dividing the odds of one event by the odds of another event. So the odds ratio for admission would be the odds of men divided by the odds of women:
+
+\[ OR = \frac{0.154}{0.081} = 1.9 \]
+
+So men have about twice the odds of being admitted than women do. This is an odds ratio.
+
+Odds ratios, then, are a way to describe the relative likelihood of two events happening. 
+
+\end{document}  
